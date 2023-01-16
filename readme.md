@@ -16,9 +16,6 @@ Here is a representation of the project structure and the corresponding files fr
         <a href="https://github.com/frapastique/kotlinCourse/blob/main/week01/day01/05_Textabgabe.kt">05_Textabgabe.kt</a>
         </ul>
   </details>
-  </ul>
-  
-  <ul>
   <details>
     <summary><a href="https://github.com/frapastique/kotlinCourse/tree/main/week01/day02">day02</a></summary>
     <ul>
@@ -41,8 +38,6 @@ Here is a representation of the project structure and the corresponding files fr
     <a href="https://github.com/frapastique/kotlinCourse/blob/main/week01/day02/17_VariablenSteckbrief.kt">17_VariablenSteckbrief.kt</a>
     </ul>
   </details>
-  </ul>
-  <ul>
   <details>
     <summary><a href="https://github.com/frapastique/kotlinCourse/tree/main/week01/day03">day03</a></summary>
     <ul>
@@ -53,8 +48,6 @@ Here is a representation of the project structure and the corresponding files fr
     05_Textabgabe.kt
     </ul>
   </details>
-  </ul>
-  <ul>
   <details>
     <summary><a href="https://github.com/frapastique/kotlinCourse/tree/main/week01/day04">day04</a></summary>
     <ul>
@@ -65,8 +58,6 @@ Here is a representation of the project structure and the corresponding files fr
     05_Textabgabe.kt
     </ul>
   </details>
-  </ul>
-  <ul>
   <details>
     <summary><a href="https://github.com/frapastique/kotlinCourse/tree/main/week01/day05">day05</a></summary>
     <ul>
