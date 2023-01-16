@@ -6,3 +6,11 @@
         und gibt den in der Variablen festgelegten Wert von 0 in der Konsole ausgegeben!
 
  */
+
+fun main() {
+    var i: Int = 0
+    while (i > 5) {
+        i++
+    }
+    println(i)
+}
