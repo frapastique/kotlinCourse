@@ -25,6 +25,8 @@ fun main(){
     (i < wochenTage.size) und nicht etwa
     (i <= wochenTage.size)?
     Probiert aus, was passiert, wenn ihr den < Operator durch <= ersetzt und beantwortet, welcher Fehler auftritt und weshalb!
-
+        Die Liste hat zwar 7 Elemente, jedoch wird in der Programmierung bzw. in diesem Fall wird der Index von 0 bis 6 angegeben
+        Wenn i=7 erreicht wird und wir auf das 7. Element zugreifen möchten wird die
+        "Exception: Index 7 out of bounds for length 7" geworfen
 */
 
