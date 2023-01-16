@@ -1,8 +1,8 @@
 fun main(){
     var umgedrehterSatz = listOf(".", "rückwärts", "mehr ", "nicht ", "ist ", "Satz ", "Dieser ")
-    println("Ursprünglicher Satz: $umgedrehterSatz")
+    println("Ursprünglicher Satz: ${umgedrehterSatz.joinToString("")}")
     var lesbarerSatz: MutableList<String> = satzAusgabe(umgedrehterSatz)
-    println("Korrekter Satz:      $lesbarerSatz")
+    println("Korrekter Satz:      ${lesbarerSatz.joinToString("")}")
 }
 
 fun satzAusgabe(list: List<String>): MutableList<String> {
