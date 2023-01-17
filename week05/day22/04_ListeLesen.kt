@@ -1,5 +1,5 @@
 fun main() {
-    var fruits: List<String> = listOf("Strawberry", "Apple", "Banana", "Lemon")
+    val fruits: List<String> = listOf("Strawberry", "Apple", "Banana", "Lemon")
 
     for (fruit in fruits) {
         println(fruit)
