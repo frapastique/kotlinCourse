@@ -25,4 +25,8 @@ fun main(){
         }
     }
     println("Version 1: Die höchste Zahl in der Liste ist \"$highestNumber1\" und kommt insgesamt $counter1 mal vor.")
+
+    val highestNumber2: Int = numberList.max()
+    val counter2: Int = numberList.count {it == highestNumber2}
+    println("Version 2: Die höchste Zahl in der Liste ist \"$highestNumber2\" und kommt insgesamt $counter2 mal vor.")
 }
