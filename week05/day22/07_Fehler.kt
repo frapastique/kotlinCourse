@@ -1,3 +1,4 @@
+/*
 fun main() {
     var lieblingsFilme: List<String> = listOf("Batman", "Breaking Bad", "Attack on Titan", "Planet der Affen")
 
@@ -6,3 +7,4 @@ fun main() {
     println(lieblingsFilme[i])
 
 }
+ */
