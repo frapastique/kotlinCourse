@@ -87,6 +87,165 @@ Here is a representation of the project structure and the corresponding files fr
   </details>
   </ul>
 </details>
-
+<details>
+  <summary><a href="https://github.com/frapastique/kotlinCourse/tree/main/week02">week02<!a></summary>
+  <ul>
+  <details>
+    <summary><a href="">day</a></summary>
+        <ul>
+        <a href="">.kt</a><br>
+        <a href="">.kt</a>
+        </ul>
+  </details>
+  <details>
+    <summary><a href="">day</a></summary>
+        <ul>
+        <a href="">.kt</a><br>
+        <a href="">.kt</a>
+        </ul>
+  </details>
+  <details>
+    <summary><a href="">day</a></summary>
+        <ul>
+        <a href="">.kt</a><br>
+        <a href="">.kt</a>
+        </ul>
+  </details>
+  <details>
+    <summary><a href="">day</a></summary>
+        <ul>
+        <a href="">.kt</a><br>
+        <a href="">.kt</a>
+        </ul>
+  </details>
+  <details>
+    <summary><a href="">day</a></summary>
+        <ul>
+        <a href="">.kt</a><br>
+        <a href="">.kt</a>
+        </ul>
+  </details>
+  </ul>
+</details>
+<details>
+  <summary><a href="https://github.com/frapastique/kotlinCourse/tree/main/week03">week03<!a></summary>
+  <ul>
+  <details>
+    <summary><a href="">day</a></summary>
+        <ul>
+        <a href="">.kt</a><br>
+        <a href="">.kt</a>
+        </ul>
+  </details>
+  <details>
+    <summary><a href="">day</a></summary>
+        <ul>
+        <a href="">.kt</a><br>
+        <a href="">.kt</a>
+        </ul>
+  </details>
+  <details>
+    <summary><a href="">day</a></summary>
+        <ul>
+        <a href="">.kt</a><br>
+        <a href="">.kt</a>
+        </ul>
+  </details>
+  <details>
+    <summary><a href="">day</a></summary>
+        <ul>
+        <a href="">.kt</a><br>
+        <a href="">.kt</a>
+        </ul>
+  </details>
+  <details>
+    <summary><a href="">day</a></summary>
+        <ul>
+        <a href="">.kt</a><br>
+        <a href="">.kt</a>
+        </ul>
+  </details>
+  </ul>
+</details>
+<details>
+  <summary><a href="https://github.com/frapastique/kotlinCourse/tree/main/week04">week04<!a></summary>
+  <ul>
+  <details>
+    <summary><a href="">day</a></summary>
+        <ul>
+        <a href="">.kt</a><br>
+        <a href="">.kt</a>
+        </ul>
+  </details>
+  <details>
+    <summary><a href="">day</a></summary>
+        <ul>
+        <a href="">.kt</a><br>
+        <a href="">.kt</a>
+        </ul>
+  </details>
+  <details>
+    <summary><a href="">day</a></summary>
+        <ul>
+        <a href="">.kt</a><br>
+        <a href="">.kt</a>
+        </ul>
+  </details>
+  <details>
+    <summary><a href="">day</a></summary>
+        <ul>
+        <a href="">.kt</a><br>
+        <a href="">.kt</a>
+        </ul>
+  </details>
+  <details>
+    <summary><a href="">day</a></summary>
+        <ul>
+        <a href="">.kt</a><br>
+        <a href="">.kt</a>
+        </ul>
+  </details>
+  </ul>
+</details>
+<details>
+  <summary><a href="https://github.com/frapastique/kotlinCourse/tree/main/week05">week05<!a></summary>
+  <ul>
+  <details>
+    <summary><a href="">day</a></summary>
+        <ul>
+        <a href="">.kt</a><br>
+        <a href="">.kt</a>
+        </ul>
+  </details>
+  <details>
+    <summary><a href="">day</a></summary>
+        <ul>
+        <a href="">.kt</a><br>
+        <a href="">.kt</a>
+        </ul>
+  </details>
+  <details>
+    <summary><a href="">day</a></summary>
+        <ul>
+        <a href="">.kt</a><br>
+        <a href="">.kt</a>
+        </ul>
+  </details>
+  <details>
+    <summary><a href="">day</a></summary>
+        <ul>
+        <a href="">.kt</a><br>
+        <a href="">.kt</a>
+        </ul>
+  </details>
+  <details>
+    <summary><a href="">day</a></summary>
+        <ul>
+        <a href="">.kt</a><br>
+        <a href="">.kt</a>
+        </ul>
+  </details>
+  </ul>
+</details>
 
 File is work in progress.
