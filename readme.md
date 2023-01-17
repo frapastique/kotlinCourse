@@ -1,6 +1,6 @@
 # Kotlin Basics Course at Syntax-Institut
 
-In this repository, you will find a documentation of my journey to master the basics of Kotlin programming language using IntelliJ IDEA development environment. The following sections will provide an overview of the project structure and a detailed breakdown of the knowledge acquired during each day of the course.
+In this repository you will find documentation of my journey to mastering the basics of the Kotlin programming language using the IntelliJ IDEA development environment. The following sections provide an overview of the project structure and a detailed breakdown of the knowledge acquired on each day of the course.
 
 Here is a representation of the project structure and the corresponding files from the learning journey:
 <details>
