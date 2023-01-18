@@ -3,7 +3,7 @@ val computerGuess = Random.nextInt(1, 100)
 var counter: Int = 0
 
 fun main() {
-    println(computerGuess)
+//    println(computerGuess)
     println("""
         Willkommen zum Zahlen Raten Spiel!
         
