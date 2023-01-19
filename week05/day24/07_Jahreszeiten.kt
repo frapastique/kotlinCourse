@@ -8,7 +8,7 @@ fun main() {
     val randomMonat: String = monate.random()
     println("\nTask a:\nDer Monat $randomMonat ist im ${checkSeason(randomMonat)}.")
 
-    println("\nTask b:\n")
+    println("\nTask b:")
     for (i in monate) {
         if (checkSeason(i) == "Winter") {
             println("Der Monat $i ist im Winter.")
@@ -26,6 +26,24 @@ fun main() {
             println("Der Monat $i ist im Herbst.")
             continue
         }
+    }
+
+    println("\nTask c:")
+    var sommerMonate: MutableList<String> = mutableListOf()
+    for (i in monate) {
+        if (checkSeason(i) == "Sommer") {
+            sommerMonate.add(i)
+            continue
+        }
+    }
+    println("Die Monate ${sommerMonate.joinToString(", ")} sind im Sommer.")
+
+    println("\nTask d:")
+    for (i in monate) {
+        if (i == "Juni") {
+            continue
+        }
+        println(i)
     }
 }
 
