@@ -45,6 +45,21 @@ fun main() {
         }
         println(i)
     }
+
+    println("\nTask e:")
+    for (i in monate) {
+        if (i != "März") {
+            if (i == "April") {
+                break
+            }
+            println(i)
+        }
+        if (i == "März") {
+            for (j in monate.indexOf("März") until monate.size step 2) {
+                println(monate[j])
+            }
+        }
+    }
 }
 
 fun checkSeason(month: String): String {
