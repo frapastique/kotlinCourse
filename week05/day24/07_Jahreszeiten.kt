@@ -11,7 +11,7 @@ fun main() {
         Task a:
         Eine Funktion, die einen Monat als Parameter erhält und die Jahreszeit für den Monat zurückgibt.
         
-        Randomisiert wurde der Monat $randomMonat ausgewählt welcher im ${checkSeason(randomMonat)} beheimatet ist.
+        Randomisiert wurde der Monat $randomMonat ausgewählt. Dieser ist im ${checkSeason(randomMonat)}.
         
         """.trimIndent())
 
