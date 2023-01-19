@@ -19,7 +19,7 @@ fun checkNumber(): String {
 
     while (true) {
         if (humanGuess == computerGuess && counter == 0) {
-            return "\nWoah... Du hast die Zahl $computerGuess erraten im ersten Versuch erraten!"
+            return "\nWoah... Du hast die Zahl $computerGuess im ersten Versuch erraten!"
         } else if (humanGuess in computerGuess - 11 until computerGuess) {
             counter++
             println("Zu klein, aber ganz nah dran!\n")
