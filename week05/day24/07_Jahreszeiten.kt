@@ -6,7 +6,27 @@ fun main() {
     println(monate)
 
     val randomMonat: String = monate.random()
-    println("Der Monat $randomMonat befindet sich im ${checkSeason(randomMonat)}.")
+    println("\nTask a:\nDer Monat $randomMonat ist im ${checkSeason(randomMonat)}.")
+
+    println("\nTask b:\n")
+    for (i in monate) {
+        if (checkSeason(i) == "Winter") {
+            println("Der Monat $i ist im Winter.")
+            continue
+        }
+        if (checkSeason(i) == "Frühling") {
+            println("Der Monat $i ist im Frühling.")
+            continue
+        }
+        if (checkSeason(i) == "Sommer") {
+            println("Der Monat $i ist im Sommer.")
+            continue
+        }
+        if (checkSeason(i) == "Herbst") {
+            println("Der Monat $i ist im Herbst.")
+            continue
+        }
+    }
 }
 
 fun checkSeason(month: String): String {
