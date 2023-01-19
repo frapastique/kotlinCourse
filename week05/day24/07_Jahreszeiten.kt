@@ -6,9 +6,20 @@ fun main() {
     println(monate)
 
     val randomMonat: String = monate.random()
-    println("\nTask a:\nDer Monat $randomMonat ist im ${checkSeason(randomMonat)}.")
+    println("""
+        
+        Task a:
+        Eine Funktion, die einen Monat als Parameter erhält und die Jahreszeit für den Monat zurückgibt.
+        
+        Randomisiert wurde der Monat $randomMonat ausgewählt welcher im ${checkSeason(randomMonat)} beheimatet ist.
+        
+        """.trimIndent())
 
-    println("\nTask b:")
+    println("""
+        Task b:
+        Eine Schleife, die alle Monate mit ihrer Jahreszeit in der Konsole ausgibt.
+        
+        """.trimIndent())
     for (i in monate) {
         if (checkSeason(i) == "Winter") {
             println("Der Monat $i ist im Winter.")
@@ -28,7 +39,12 @@ fun main() {
         }
     }
 
-    println("\nTask c:")
+    println("""
+        
+        Task c:
+        Eine Schleife die nur die Sommermonate in der Konsole ausgibt.
+        
+        """.trimIndent())
     var sommerMonate: MutableList<String> = mutableListOf()
     for (i in monate) {
         if (checkSeason(i) == "Sommer") {
@@ -38,15 +54,28 @@ fun main() {
     }
     println("Die Monate ${sommerMonate.joinToString(", ")} sind im Sommer.")
 
-    println("\nTask d:")
+    println("""
+        
+        Task d:
+        Eine Schleife die alle Monate außer den Juni und den September ausgibt.
+        
+        """.trimIndent())
     for (i in monate) {
         if (i == "Juni") {
+            continue
+        }
+        if (i == "September") {
             continue
         }
         println(i)
     }
 
-    println("\nTask e:")
+    println("""
+        
+        Task e:
+        Eine Schleife die ab dem März jeden zweiten Monat ausgibt.
+        
+        """.trimIndent())
     for (i in monate) {
         if (i != "März") {
             if (i == "April") {
