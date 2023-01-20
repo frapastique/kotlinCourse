@@ -15,7 +15,7 @@ var meinDeck = kartendeck.toMutableList()
 
 fun main() {
     showCards(meinDeck, handHuman, handDealer)
-    hitOrPut(handHuman, handDealer)
+    hitOrPut(handHuman)
 }
 
 fun mischen(deck: MutableList<String>) {
@@ -122,7 +122,7 @@ fun checkInput(): String {
     }
 }
 
-fun hitOrPut(hand0: MutableList<String>, hand1: MutableList<String>) {
+fun hitOrPut(hand0: MutableList<String>) {
     println("""
         Karte ziehen: 'hit'
         Nicht ziehen: 'stand'
@@ -130,7 +130,7 @@ fun hitOrPut(hand0: MutableList<String>, hand1: MutableList<String>) {
         """.trimIndent())
     print("Deine Entscheidung: ")
     var input: String = checkInput()
-    var karte: String = ""
+    var karte: String = eineKarteZiehen(meinDeck)
     var wert: Int = 0
     var check: Boolean = false
     while (input == "hit") {
@@ -138,7 +138,7 @@ fun hitOrPut(hand0: MutableList<String>, hand1: MutableList<String>) {
         println("Deine Karten sind: ${hand0.joinToString("' '", "'", "'")}")
         wert = punktzahlHand(hand0)
         println("Wert: = $wert")
-        meinDeck = hand0
+        handHuman = hand0
         check = looseTerm(hand0)
         // check if true
         if (check) {
