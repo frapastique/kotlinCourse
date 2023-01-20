@@ -52,7 +52,7 @@ fun kartenWert(karte: String): Int {
 fun punktzahlHand(karten: MutableList<String>): Int {
     var wertHand: Int = 0
     for (i in karten) {
-        wertHand = kartenWert(i)
+        wertHand += kartenWert(i)
     }
     return wertHand
 }
@@ -147,13 +147,8 @@ fun hitOrPut(hand0: MutableList<String>) {
             println("Du hast mit dem Wert '$wert' verloren!")
             exitProcess(0)
         } else {
-            println("""
-                Karte ziehen: 'hit'
-                Nicht ziehen: 'stand'
-                
-                """.trimIndent())
-            input = checkInput()
-            return
+            hitOrPut(handHuman)
+            break
         }
     }
 }
