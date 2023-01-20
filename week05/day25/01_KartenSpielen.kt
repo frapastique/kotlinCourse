@@ -92,3 +92,27 @@ fun looseTerm(hand: MutableList<String>): Boolean {
     }
     return condition
 }
+
+fun checkInput(): String {
+    while (true) {
+        var input = readln().lowercase()
+        if (input.isNotBlank()) {
+            when (input) {
+                "hit" -> {
+                    return input
+                }
+                "put" -> {
+                    return input
+                }
+                else -> {
+                    println("Deine Eingabe '$input' ist nicht möglich. Versuche es erneut! ")
+                    checkInput()
+                }
+            }
+        } else {
+            println("Deine Eingabe '$input' ist nicht möglich. Versuche es erneut! ")
+            checkInput()
+        }
+    }
+}
+
