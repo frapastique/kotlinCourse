@@ -61,7 +61,8 @@ fun showCards(deck: MutableList<String>, hand0: MutableList<String>, hand1: Muta
         hand0.add(eineKarteZiehen(deck))
     }
     if (hand0.size == 2) {
-        println("Deine Karten sind: ${hand0[0]} ${hand0[1]} ")
+        println("Deine Karten sind: '${hand0[0]}' '${hand0[1]}'")
+        println("Wert: = ${punktzahlHand(hand0)}")
         handHuman = hand0
     }
 
@@ -72,10 +73,22 @@ fun showCards(deck: MutableList<String>, hand0: MutableList<String>, hand1: Muta
         var karte0: Int = kartenWert(hand1[0])
         var karte1: Int = kartenWert(hand1[1])
         if (karte0 > karte1) {
-            println("Karten Dealer: Verdeckt ${hand1[0]}")
+            println("Karten Dealer:     '${hand1[0]}' 'Verdeckt' = $karte0")
+            println("Wert: = $karte0")
         } else {
-            println("Karten Dealer: Verdeckt ${hand1[1]}")
+            println("Karten Dealer:     '${hand1[1]}' 'Verdeckt'")
+            println("Wert: = $karte1")
         }
         handDealer = hand1
     }
+}
+
+fun looseTerm(hand: MutableList<String>): Boolean {
+    val number: Int = punktzahlHand(hand)
+    var condition: Boolean = false
+    while (number > 21) {
+        condition = true
+        break
+    }
+    return condition
 }
