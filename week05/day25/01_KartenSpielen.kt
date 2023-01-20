@@ -1,4 +1,3 @@
-//Auf gehts eine Runde BlackJack! Hier ist ein vollständiges Kartendeck.
 val kartendeck: List<String> = listOf(
     "Pik Ass", "Pik Koenig", "Pik Dame", "Pik Bube", "Pik 10", "Pik 9",
     "Pik 8", "Pik 7", "Pik 6", "Pik 5", "Pik 4", "Pik 3", "Pik 2",
@@ -10,23 +9,12 @@ val kartendeck: List<String> = listOf(
     "Karo 8", "Karo 7", "Karo 6", "Karo 5", "Karo 4", "Karo 3", "Karo 2",
 )
 
+var handHuman: MutableList<String> = mutableListOf()
+var handDealer: MutableList<String> = mutableListOf()
+var meinDeck = kartendeck.toMutableList()
+
 fun main() {
-
-    /* Die Variable meinDeck ist euer Deck mit dem ihr arbeiten könnt.
-    Mit der Funktion mischen() könnt ihr das Deck mischen.
-    Mit der Funktion eineKarteZiehen() könnt ihr aus eurem Deck die oberste Karte ziehen.
-    Beachtet, dass die Funktion die Karte auch aus eurem Deck entfernt.
-    Mit der Funktion kartenWert() bekommst du den Wert einer Karte als Int zurück.
-    Unter dem Kommentar siehst du wie du die Funktionen benutzen kannst.
-     */
-    var meinDeck = kartendeck.toMutableList()
-
-    mischen(meinDeck)
-    var karte = eineKarteZiehen(meinDeck)
-    var beispielwert = kartenWert(karte)
-    println(beispielwert)
-
-
+    showCards(meinDeck, handHuman, handDealer)
 }
 
 fun mischen(deck: MutableList<String>) {
@@ -36,6 +24,7 @@ fun mischen(deck: MutableList<String>) {
 fun eineKarteZiehen(deck: MutableList<String>): String {
     var karte = deck.first()
     deck.remove(deck.first())
+    meinDeck = deck
     return karte
 }
 
@@ -65,3 +54,28 @@ fun punktzahlHand(karten: MutableList<String>): Int {
     return wertHand
 }
 
+fun showCards(deck: MutableList<String>, hand0: MutableList<String>, hand1: MutableList<String>) {
+    mischen(deck)
+
+    while (hand0.size < 2) {
+        hand0.add(eineKarteZiehen(deck))
+    }
+    if (hand0.size == 2) {
+        println("Deine Karten sind: ${hand0[0]} ${hand0[1]} ")
+        handHuman = hand0
+    }
+
+    while (hand1.size < 2) {
+        hand1.add(eineKarteZiehen(deck))
+    }
+    if (hand1.size == 2) {
+        var karte0: Int = kartenWert(hand1[0])
+        var karte1: Int = kartenWert(hand1[1])
+        if (karte0 > karte1) {
+            println("Karten Dealer: Verdeckt ${hand1[0]}")
+        } else {
+            println("Karten Dealer: Verdeckt ${hand1[1]}")
+        }
+        handDealer = hand1
+    }
+}
