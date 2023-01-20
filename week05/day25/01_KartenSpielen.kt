@@ -16,6 +16,7 @@ var handDealer: MutableList<String> = mutableListOf()
 var meinDeck = kartendeck.toMutableList()
 
 fun main() {
+    println("Game: Blackjack")
     showCards(meinDeck, handHuman, handDealer)
     hitOrPut(handHuman)
 }
@@ -64,7 +65,7 @@ fun showCards(deck: MutableList<String>, hand0: MutableList<String>, hand1: Muta
         hand0.add(eineKarteZiehen(deck))
     }
     if (hand0.size == 2) {
-        println("Deine Karten sind: '${hand0[0]}' '${hand0[1]}'")
+        println("\nDeine Karten sind: '${hand0[0]}' '${hand0[1]}'")
         println("Wert: = ${punktzahlHand(hand0)}")
         handHuman = hand0
         var check: Boolean = looseTerm(hand0)
@@ -81,10 +82,10 @@ fun showCards(deck: MutableList<String>, hand0: MutableList<String>, hand1: Muta
         var karte0: Int = kartenWert(hand1[0])
         var karte1: Int = kartenWert(hand1[1])
         if (karte0 > karte1) {
-            println("Karten Dealer:     '${hand1[0]}' 'Verdeckt' = $karte0")
+            println("\nKarten Dealer:     '${hand1[0]}' 'Verdeckt' = $karte0")
             println("Wert: = $karte0")
         } else {
-            println("Karten Dealer:     '${hand1[1]}' 'Verdeckt'")
+            println("\nKarten Dealer:     '${hand1[1]}' 'Verdeckt'")
             println("Wert: = $karte1")
         }
         handDealer = hand1
@@ -127,6 +128,7 @@ fun checkInput(): String {
 
 fun hitOrPut(hand0: MutableList<String>) {
     println("""
+        
         Karte ziehen: 'hit'
         Nicht ziehen: 'stand'
         
@@ -137,14 +139,18 @@ fun hitOrPut(hand0: MutableList<String>) {
     var check: Boolean
     while (input == "hit") {
         hand0.add(karte)
-        println("Deine Karten sind: ${hand0.joinToString("' '", "'", "'")}")
+        println("\nDeine Karten sind: ${hand0.joinToString("' '", "'", "'")}")
         wert = punktzahlHand(hand0)
         println("Wert: = $wert")
         handHuman = hand0
         check = looseTerm(hand0)
+        if (wert == 21) {
+            println("\nGratuliere du hast gewonnen.")
+            break
+        }
         // check if true
         if (check) {
-            println("Du hast mit dem Wert '$wert' verloren!")
+            println("\nDu hast mit dem Wert '$wert' verloren!")
             exitProcess(0)
         } else {
             hitOrPut(handHuman)
