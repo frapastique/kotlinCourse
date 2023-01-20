@@ -59,6 +59,8 @@ fun punktzahlHand(karten: MutableList<String>): Int {
 }
 
 fun showCards(deck: MutableList<String>, hand0: MutableList<String>, hand1: MutableList<String>) {
+
+
     mischen(deck)
 
     while (hand0.size < 2) {
@@ -70,6 +72,7 @@ fun showCards(deck: MutableList<String>, hand0: MutableList<String>, hand1: Muta
         handHuman = hand0
         var check: Boolean = looseTerm(hand0)
         if (check) {
+
             println("Schade... bereits verloren!")
             exitProcess(0)
         }
@@ -79,10 +82,11 @@ fun showCards(deck: MutableList<String>, hand0: MutableList<String>, hand1: Muta
         hand1.add(eineKarteZiehen(deck))
     }
     if (hand1.size == 2) {
+
         var karte0: Int = kartenWert(hand1[0])
         var karte1: Int = kartenWert(hand1[1])
         if (karte0 > karte1) {
-            println("\nKarten Dealer:     '${hand1[0]}' 'Verdeckt' = $karte0")
+            println("\nKarten Dealer:     '${hand1[0]}' 'Verdeckt'")
             println("Wert: = $karte0")
         } else {
             println("\nKarten Dealer:     '${hand1[1]}' 'Verdeckt'")
@@ -109,9 +113,17 @@ fun checkInput(): String {
         if (input.isNotEmpty()) {
             when (input) {
                 "hit" -> {
+
                     return input
                 }
                 "stand" -> {
+
+                    return input
+                }
+                "dealer" -> {
+                    return input
+                }
+                "beide" -> {
                     return input
                 }
                 else -> {
@@ -126,39 +138,131 @@ fun checkInput(): String {
     }
 }
 
+fun cardsDealer() {
+    var karte0: Int = kartenWert(handDealer[0])
+    var karte1: Int = kartenWert(handDealer[1])
+
+    if (karte0 > karte1) {
+        println("\nKarten Dealer:  '${handDealer[0]}' 'Verdeckt' = $karte0")
+        println("Wert: = $karte0")
+        hitOrPut(handHuman)
+    } else {
+        println("\nKarten Dealer:  '${handDealer[1]}' 'Verdeckt'")
+        println("Wert: = $karte1")
+        hitOrPut(handHuman)
+    }
+}
+
+fun cardsHuman() {
+    println("\nDeine Karten: ${handHuman.joinToString("' '", "'", "'")}")
+    println("Wert: ${punktzahlHand(handHuman)}")
+}
+
 fun hitOrPut(hand0: MutableList<String>) {
     println("""
         
         Karte ziehen: 'hit'
         Nicht ziehen: 'stand'
+        Dealers Hand: 'dealer'
+        Beide Hände:  'beide' 
         
         """.trimIndent())
+
     var input: String = checkInput()
     var karte: String = eineKarteZiehen(meinDeck)
-    var wert: Int
+    var wert: Int = punktzahlHand(hand0)
     var check: Boolean
+
+    if (input == "dealer") {
+        cardsDealer()
+    }
+
+    if (input == "beide") {
+        cardsHuman()
+        cardsDealer()
+    }
+
+    if (input == "stand") {
+        return dealersTurn(handDealer, wert)
+    }
+
     while (input == "hit") {
         hand0.add(karte)
-        println("\nDeine Karten sind: ${hand0.joinToString("' '", "'", "'")}")
-        wert = punktzahlHand(hand0)
-        println("Wert: = $wert")
-        handHuman = hand0
         check = looseTerm(hand0)
+        handHuman = hand0
+        wert = punktzahlHand(hand0)
+
+        println("\nDeine Karten: ${hand0.joinToString("' '", "'", "'")}")
+        println("Wert: $wert")
+
         if (wert == 21) {
             println("\nGratuliere du hast gewonnen.")
             break
         }
-        // check if true
+
         if (check) {
             println("\nDu hast mit dem Wert '$wert' verloren!")
             exitProcess(0)
         } else {
-            hitOrPut(handHuman)
-            break
+            return hitOrPut(handHuman)
         }
     }
 }
 
-fun dealersTurn(hand1: MutableList<String>) {
+fun dealersTurn(hand1: MutableList<String>, handWert: Int) {
+    println("\nDealer ist an der Reihe:")
 
+    var karte: String = eineKarteZiehen(meinDeck)
+    var wert: Int = punktzahlHand(hand1)
+    var check: Boolean
+    var showCards: String = "\nKarten Dealer:  ${hand1.joinToString("' '", "'", "'")}"
+
+    if (wert == 21) {
+        println("\nDer Dealer gewinnt mit dem Wert '$wert'!")
+        exitProcess(0)
+    }
+
+    while (wert < 17) {
+        hand1.add(karte)
+        check = looseTerm(hand1)
+        handDealer = hand1
+        wert = punktzahlHand(hand1)
+
+        println(showCards)
+        println("Wert: $wert")
+
+        if (check) {
+            println("\nDer Dealer verliert mit dem Wert '$wert'!")
+            exitProcess(0)
+        }
+    }
+
+    while (wert <= handWert) {
+        hand1.add(karte)
+        check = looseTerm(hand1)
+        handDealer = hand1
+        wert = punktzahlHand(hand1)
+
+        println(showCards)
+        println("Wert: $wert")
+        cardsHuman()
+
+        if (wert in (handWert + 1)..21) {
+            println("\nDer Dealer gewinnt mit dem Wert '$wert'!")
+            exitProcess(0)
+        }
+        if (check) {
+            println("\nDer Dealer verliert mit dem Wert '$wert'!")
+            exitProcess(0)
+        }
+    }
+
+    if (wert > handWert) {
+        println(showCards)
+        println("Wert: $wert")
+        cardsHuman()
+
+        println("\nDer Dealer gewinnt mit dem Wert '$wert'!")
+        exitProcess(0)
+    }
 }
