@@ -59,20 +59,22 @@ fun punktzahlHand(karten: MutableList<String>): Int {
 }
 
 fun showCards(deck: MutableList<String>, hand0: MutableList<String>, hand1: MutableList<String>) {
-
-
     mischen(deck)
 
     while (hand0.size < 2) {
         hand0.add(eineKarteZiehen(deck))
     }
     if (hand0.size == 2) {
+        var wert = punktzahlHand(hand0)
         println("\nDeine Karten sind: '${hand0[0]}' '${hand0[1]}'")
-        println("Wert: = ${punktzahlHand(hand0)}")
+        println("Wert: = $wert")
         handHuman = hand0
+        if (wert == 21) {
+            println("\nGratuliere du hast bereits gewonnen.")
+            exitProcess(0)
+        }
         var check: Boolean = looseTerm(hand0)
         if (check) {
-
             println("Schade... bereits verloren!")
             exitProcess(0)
         }
@@ -215,7 +217,6 @@ fun dealersTurn(hand1: MutableList<String>, handWert: Int) {
     var karte: String = eineKarteZiehen(meinDeck)
     var wert: Int = punktzahlHand(hand1)
     var check: Boolean
-    var showCards: String = "\nKarten Dealer:  ${hand1.joinToString("' '", "'", "'")}"
 
     if (wert == 21) {
         println("\nDer Dealer gewinnt mit dem Wert '$wert'!")
@@ -228,7 +229,7 @@ fun dealersTurn(hand1: MutableList<String>, handWert: Int) {
         handDealer = hand1
         wert = punktzahlHand(hand1)
 
-        println(showCards)
+        println("\nKarten Dealer:  ${hand1.joinToString("' '", "'", "'")}")
         println("Wert: $wert")
 
         if (check) {
@@ -237,13 +238,22 @@ fun dealersTurn(hand1: MutableList<String>, handWert: Int) {
         }
     }
 
+    if (wert >= handWert) {
+        println("\nKarten Dealer:  ${hand1.joinToString("' '", "'", "'")}")
+        println("Wert: $wert")
+        cardsHuman()
+
+        println("\nDer Dealer gewinnt mit dem Wert '$wert'!")
+        exitProcess(0)
+    }
+
     while (wert <= handWert) {
         hand1.add(karte)
         check = looseTerm(hand1)
         handDealer = hand1
         wert = punktzahlHand(hand1)
 
-        println(showCards)
+        println("\nKarten Dealer:  ${hand1.joinToString("' '", "'", "'")}")
         println("Wert: $wert")
         cardsHuman()
 
@@ -255,14 +265,5 @@ fun dealersTurn(hand1: MutableList<String>, handWert: Int) {
             println("\nDer Dealer verliert mit dem Wert '$wert'!")
             exitProcess(0)
         }
-    }
-
-    if (wert > handWert) {
-        println(showCards)
-        println("Wert: $wert")
-        cardsHuman()
-
-        println("\nDer Dealer gewinnt mit dem Wert '$wert'!")
-        exitProcess(0)
     }
 }
