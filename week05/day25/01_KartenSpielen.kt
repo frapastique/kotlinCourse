@@ -15,6 +15,7 @@ var meinDeck = kartendeck.toMutableList()
 
 fun main() {
     showCards(meinDeck, handHuman, handDealer)
+    hitOrPut(handHuman, handDealer)
 }
 
 fun mischen(deck: MutableList<String>) {
@@ -64,6 +65,11 @@ fun showCards(deck: MutableList<String>, hand0: MutableList<String>, hand1: Muta
         println("Deine Karten sind: '${hand0[0]}' '${hand0[1]}'")
         println("Wert: = ${punktzahlHand(hand0)}")
         handHuman = hand0
+        var check: Boolean = looseTerm(hand0)
+        if (check) {
+            println("Schade... bereits verloren!")
+            System.exit(0)
+        }
     }
 
     while (hand1.size < 2) {
@@ -101,18 +107,56 @@ fun checkInput(): String {
                 "hit" -> {
                     return input
                 }
-                "put" -> {
+                "stand" -> {
                     return input
                 }
                 else -> {
-                    println("Deine Eingabe '$input' ist nicht möglich. Versuche es erneut! ")
+                    println("Deine Eingabe '$input' ist nicht möglich. Versuche es erneut!")
                     checkInput()
                 }
             }
         } else {
-            println("Deine Eingabe '$input' ist nicht möglich. Versuche es erneut! ")
+            println("Deine Eingabe '$input' ist nicht möglich. Versuche es erneut!")
             checkInput()
         }
     }
 }
 
+fun hitOrPut(hand0: MutableList<String>, hand1: MutableList<String>) {
+    println("""
+        Karte ziehen: 'hit'
+        Nicht ziehen: 'stand'
+        
+        """.trimIndent())
+    print("Deine Entscheidung: ")
+    var input: String = checkInput()
+    var karte: String = ""
+    var wert: Int = 0
+    var check: Boolean = false
+    while (input == "hit") {
+        hand0.add(karte)
+        println("Deine Karten sind: ${hand0.joinToString("' '", "'", "'")}")
+        wert = punktzahlHand(hand0)
+        println("Wert: = $wert")
+        meinDeck = hand0
+        check = looseTerm(hand0)
+        // check if true
+        if (check) {
+            println("Du hast mit dem Wert '$wert' verloren!")
+            System.exit(0)
+        } else {
+            println("""
+                Karte ziehen: 'hit'
+                Nicht ziehen: 'stand'
+                
+                """.trimIndent())
+            print("Deine Entscheidung: ")
+            input = checkInput()
+            return
+        }
+    }
+}
+
+fun dealersTurn() {
+
+}
