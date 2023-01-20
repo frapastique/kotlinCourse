@@ -56,3 +56,12 @@ fun kartenWert(karte: String): Int {
         else -> 0
     }
 }
+
+fun punktzahlHand(karten: MutableList<String>): Int {
+    var wertHand: Int = 0
+    for (i in karten) {
+        wertHand = kartenWert(i)
+    }
+    return wertHand
+}
+
