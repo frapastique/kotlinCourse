@@ -1,3 +1,5 @@
+import kotlin.system.exitProcess
+
 val kartendeck: List<String> = listOf(
     "Pik Ass", "Pik Koenig", "Pik Dame", "Pik Bube", "Pik 10", "Pik 9",
     "Pik 8", "Pik 7", "Pik 6", "Pik 5", "Pik 4", "Pik 3", "Pik 2",
@@ -68,7 +70,7 @@ fun showCards(deck: MutableList<String>, hand0: MutableList<String>, hand1: Muta
         var check: Boolean = looseTerm(hand0)
         if (check) {
             println("Schade... bereits verloren!")
-            System.exit(0)
+            exitProcess(0)
         }
     }
 
@@ -100,9 +102,10 @@ fun looseTerm(hand: MutableList<String>): Boolean {
 }
 
 fun checkInput(): String {
+    print("Deine Entscheidung: ")
+    var input: String = readln().lowercase()
     while (true) {
-        var input = readln().lowercase()
-        if (input.isNotBlank()) {
+        if (input.isNotEmpty()) {
             when (input) {
                 "hit" -> {
                     return input
@@ -112,12 +115,12 @@ fun checkInput(): String {
                 }
                 else -> {
                     println("Deine Eingabe '$input' ist nicht möglich. Versuche es erneut!")
-                    checkInput()
+                    return checkInput()
                 }
             }
         } else {
             println("Deine Eingabe '$input' ist nicht möglich. Versuche es erneut!")
-            checkInput()
+            return checkInput()
         }
     }
 }
@@ -128,11 +131,10 @@ fun hitOrPut(hand0: MutableList<String>) {
         Nicht ziehen: 'stand'
         
         """.trimIndent())
-    print("Deine Entscheidung: ")
     var input: String = checkInput()
     var karte: String = eineKarteZiehen(meinDeck)
-    var wert: Int = 0
-    var check: Boolean = false
+    var wert: Int
+    var check: Boolean
     while (input == "hit") {
         hand0.add(karte)
         println("Deine Karten sind: ${hand0.joinToString("' '", "'", "'")}")
@@ -143,20 +145,19 @@ fun hitOrPut(hand0: MutableList<String>) {
         // check if true
         if (check) {
             println("Du hast mit dem Wert '$wert' verloren!")
-            System.exit(0)
+            exitProcess(0)
         } else {
             println("""
                 Karte ziehen: 'hit'
                 Nicht ziehen: 'stand'
                 
                 """.trimIndent())
-            print("Deine Entscheidung: ")
             input = checkInput()
             return
         }
     }
 }
 
-fun dealersTurn() {
+fun dealersTurn(hand1: MutableList<String>) {
 
 }
