@@ -36,7 +36,7 @@ fun game(money: Int) {
             break
         }
     }
-    while (money == 0) {
+    if (moneyHuman == 0) {
         println("""
             
             Aufladen:     'yes'
@@ -49,28 +49,26 @@ fun game(money: Int) {
             counterRestock++
             moneyHuman = setHumanMoney()
             game(moneyHuman)
-        }
-        if (input == "stop") {
-            break
+        } else if (input == "stop") {
+            println("""
+                Statistik:
+                
+                Runden:     $counter
+                Verloren:   $counterLoose
+                Draw:       $counterDraw
+                Gewonnen:   $counterWin
+                
+                Hits:       $counterHit
+                Stands:     $counterStand
+                
+                Kontostand: $moneyHuman€
+                Verdient:   $counterWon€
+                Verloren:   $counterLost€
+                
+                Aufstocken: $counterRestock
+                
+                Danke fürs Spielen und bis zum nächsten Mal!""".trimIndent())
+            exitProcess(0)
         }
     }
-    println("""
-        Statistik:
-        
-        Runden:     $counter
-        Verloren:   $counterLoose
-        Draw:       $counterDraw
-        Gewonnen:   $counterWin
-        
-        Hits:       $counterHit
-        Stands:     $counterStand
-        
-        Kontostand: $moneyHuman€
-        Verdient:   $counterWon€
-        Verloren:   $counterLost€
-        
-        Aufstocken: $counterRestock
-        
-        Danke fürs Spielen und bis zum nächsten Mal!""".trimIndent())
-    exitProcess(0)
 }
