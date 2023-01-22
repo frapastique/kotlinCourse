@@ -6,12 +6,12 @@ fun game(money: Int) {
         while (money > 0) {
             if (counter == 0) {
                 counter = 1
-                println("Kontostand: $money€")
+                println("Kontostand: $money€\n")
                 moneyActions(moneyHuman, "set")
                 showCards(meinDeck, handHuman, handDealer)
                 hitOrPut(handHuman)
             }
-            if (counter > 0 && moneyHuman != 0 && counterRestock == 0) {
+            if (counter > 0 && moneyHuman != 0) {
                 println(
                     """
                 
@@ -30,18 +30,9 @@ fun game(money: Int) {
                     showCards(meinDeck, handHuman, handDealer)
                     hitOrPut(handHuman)
                     game(moneyHuman)
+                } else {
+                    endGame()
                 }
-                break
-            }
-            if (counterRestock != 0) {
-                counter++
-                handHuman.clear()
-                handDealer.clear()
-                println("\nRunde $counter")
-                moneyActions(moneyHuman, "set")
-                showCards(meinDeck, handHuman, handDealer)
-                hitOrPut(handHuman)
-                game(moneyHuman)
             }
             break
         }
@@ -60,25 +51,30 @@ fun game(money: Int) {
             moneyHuman = setHumanMoney()
             game(moneyHuman)
         } else if (input == "stop") {
-            println("""
-                Statistik:
-                
-                Runden:     $counter
-                Verloren:   $counterLoose
-                Draw:       $counterDraw
-                Gewonnen:   $counterWin
-                
-                Hits:       $counterHit
-                Stands:     $counterStand
-                
-                Kontostand: $moneyHuman€
-                Verdient:   $counterWon€
-                Verloren:   $counterLost€
-                
-                Aufstocken: $counterRestock
-                
-                Danke fürs Spielen und bis zum nächsten Mal!""".trimIndent())
-            exitProcess(0)
+            endGame()
         }
     }
+}
+
+fun endGame() {
+    println("""
+        
+        Statistik:
+        
+        Runden:     $counter
+        Verloren:   $counterLoose
+        Draw:       $counterDraw
+        Gewonnen:   $counterWin
+        
+        Hits:       $counterHit
+        Stands:     $counterStand
+        
+        Kontostand: $moneyHuman€
+        Verdient:   $counterWon€
+        Verloren:   $counterLost€
+        
+        Aufstocken: $counterRestock
+        
+        Danke fürs Spielen und bis zum nächsten Mal!""".trimIndent())
+    exitProcess(0)
 }

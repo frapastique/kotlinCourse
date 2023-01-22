@@ -2,7 +2,7 @@ fun moneyActions(money: Int, action: String) {
     var bet: Int = humanBet
     while (true) {
         if (action == "set") {
-            println("\nMöglicher Einsatz liegt zwischen 1€ und $money€\n")
+            println("Möglicher Einsatz liegt zwischen 1€ und $money€\n")
             try {
                 bet = checkInput().toInt()
             } catch (e: Exception) {
@@ -55,7 +55,7 @@ fun moneyActions(money: Int, action: String) {
 }
 
 fun setHumanMoney(): Int {
-    println("\nWie hoch ist dein Startkapital?")
+    println("\nWie hoch ist dein Kapital?")
     var money: Int = 0
     try {
         money = checkInput().toInt()

@@ -3,4 +3,3 @@ fun main() {
     moneyHuman = setHumanMoney()
     game(moneyHuman)
 }
-
