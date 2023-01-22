@@ -30,13 +30,13 @@ fun checkInput(): String {
                         return input
                     }
                     else -> {
-                        println("Deine Eingabe '$input' ist nicht möglich. Versuche es erneut!")
+                        println("\nDeine Eingabe '$input' ist nicht möglich. Versuche es erneut!\n")
                         return checkInput()
                     }
                 }
             }
         } else {
-            println("Deine Eingabe '$input' ist nicht möglich. Versuche es erneut!")
+            println("\nDeine Eingabe '$input' ist nicht möglich. Versuche es erneut!\n")
             return checkInput()
         }
     }

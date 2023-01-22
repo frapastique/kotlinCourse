@@ -1,11 +1,16 @@
 fun moneyActions(money: Int, action: String) {
     var bet: Int = humanBet
-    while (bet <= money) {
+    while (true) {
         if (action == "set") {
             println("\nMöglicher Einsatz liegt zwischen 1€ und $money€\n")
-            bet = checkInput().toInt()
+            try {
+                bet = checkInput().toInt()
+            } catch (e: Exception) {
+                println("\nBitte gebe eine Zahl als Integer ein!")
+                moneyActions(moneyHuman, "set")
+            }
             if (bet > money) {
-                println("Der Einsatz von $bet€ ist zu hoch. Konto nicht ausreichend gedeckt.")
+                println("\nDer Einsatz von $bet€ ist zu hoch. Konto nicht ausreichend gedeckt.")
                 moneyActions(moneyHuman, "set")
             }
             moneyHuman = money - bet
