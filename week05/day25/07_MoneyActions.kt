@@ -53,3 +53,19 @@ fun moneyActions(money: Int, action: String) {
         }
     }
 }
+
+fun setHumanMoney(): Int {
+    println("\nWie hoch ist dein Startkapital?")
+    var money: Int = 0
+    try {
+        money = checkInput().toInt()
+        if (money == 0) {
+            println("\nGebe einen einen Betrag größer 0 ein.")
+            setHumanMoney()
+        }
+    } catch (e: Exception) {
+        println("\nBitte gebe eine Zahl als Integer ein!")
+        setHumanMoney()
+    }
+    return money
+}

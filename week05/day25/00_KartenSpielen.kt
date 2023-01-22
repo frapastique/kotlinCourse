@@ -12,7 +12,7 @@ val kartendeck: List<String> = listOf(
 var handHuman: MutableList<String> = mutableListOf()
 var handDealer: MutableList<String> = mutableListOf()
 var meinDeck = kartendeck.toMutableList()
-var moneyHuman: Int = 100
+var moneyHuman: Int = 0
 var humanBet: Int = 0
 var counter: Int = 0
 var counterWin: Int = 0
@@ -24,7 +24,8 @@ var counterHit: Int = 0
 var counterStand: Int = 0
 
 fun main() {
-    println("Game: Blackjack\n")
+    println("Game: Blackjack")
+    moneyHuman = setHumanMoney()
     game(moneyHuman)
 }
 
