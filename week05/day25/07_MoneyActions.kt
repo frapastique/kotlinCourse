@@ -1,33 +1,35 @@
-fun moneyStatus(money: Int) {
-    println("Kontostand: $money€")
-    hitOrPut(handHuman)
-}
-
-fun humanBet(money: Int, bet: String, action: String) {
-    while (bet.toInt() <= money) {
+fun moneyActions(money: Int, action: String) {
+    var bet: Int = humanBet
+    while (bet <= money) {
+        if (action == "set") {
+            println("\nMöglicher Einsatz liegt zwischen 1€ und $money€\n")
+            bet = checkInput().toInt()
+            if (bet > money) {
+                println("Der Einsatz von $bet€ ist zu hoch. Konto nicht ausreichend gedeckt.")
+                moneyActions(moneyHuman, "set")
+            }
+            moneyHuman = money - bet
+            humanBet = bet
+            println("\nKontostand:  $moneyHuman€")
+            println("Einsatz:     $bet€")
+            return
+        }
         if (action == "win") {
-            moneyHuman += bet.toInt() * 2
-            println("Gutschrift:  ${bet.toInt() * 2}")
+            moneyHuman += bet * 2
+            println("Gewinn:      ${bet * 2}€")
             println("Kontostand:  $moneyHuman€")
-            break
+            return
         }
         if (action == "loose") {
-            moneyHuman = money - bet.toInt()
-            println("Lastschrift: $bet€")
+            println("Verlust:     $bet€")
             println("Kontostand:  $moneyHuman€")
-            break
-        }
-        if (action == "initial") {
-            moneyHuman = money - bet.toInt()
-            println("Kontostand:  $moneyHuman€")
-            println("Einsatz:     $bet€")
-            break
+            return
         }
         if (action == "draw") {
-            moneyHuman += bet.toInt()
+            moneyHuman += bet
             println("Gutschrift:  $bet€")
             println("Kontostand:  $moneyHuman€")
-            break
+            return
         }
         if (action == "money") {
             println("Kontostand:  $moneyHuman€")
@@ -42,7 +44,5 @@ fun humanBet(money: Int, bet: String, action: String) {
             println("Einsatz:     $bet€")
             hitOrPut(handHuman)
         }
-        println("Der Einsatz von $bet€ zu hoch. Konto nicht ausreichend gedeckt.")
-        break
     }
 }

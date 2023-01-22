@@ -13,12 +13,14 @@ fun showCards(deck: MutableList<String>, hand0: MutableList<String>, hand1: Muta
         handHuman = hand0
         if (wert == 21) {
             println("\nGratuliere du hast bereits gewonnen.")
-            exitProcess(0)
+            moneyActions(moneyHuman, "win")
+            return game(moneyHuman)
         }
         val check: Boolean = looseTerm(hand0)
         if (check) {
             println("Schade... bereits verloren!")
-            exitProcess(0)
+            moneyActions(moneyHuman, "loose")
+            return game(moneyHuman)
         }
     }
 

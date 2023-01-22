@@ -1,0 +1,41 @@
+import kotlin.system.exitProcess
+
+fun game(money: Int) {
+    var input: String = ""
+    while (money > 0) {
+        if (counter == 0) {
+            counter = 1
+            println("Kontostand: $moneyHuman€")
+            moneyActions(moneyHuman, "set")
+            showCards(meinDeck, handHuman, handDealer)
+            hitOrPut(handHuman)
+        }
+        if (counter > 0) {
+            println("""
+                
+                Neue Runde:   'yes'
+                Beenden:      'stop'
+                
+                """.trimIndent())
+            input = checkInput()
+            if (input == "yes") {
+                counter++
+                handHuman.clear()
+                handDealer.clear()
+                println(counter)
+                moneyActions(moneyHuman, "set")
+                showCards(meinDeck, handHuman, handDealer)
+                hitOrPut(handHuman)
+                game(moneyHuman)
+            } else {
+                println("""
+                    
+                    Runden:     '$counter'
+                    Kontostand: '$moneyHuman€'
+                    
+                    Danke fürs Spielen und bis zum nächsten Mal!""".trimIndent())
+                exitProcess(0)
+            }
+        }
+    }
+}

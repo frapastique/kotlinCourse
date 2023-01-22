@@ -23,6 +23,12 @@ fun checkInput(): String {
                     "konto" -> {
                         return input
                     }
+                    "yes" -> {
+                        return input
+                    }
+                    "stop" -> {
+                        return input
+                    }
                     else -> {
                         println("Deine Eingabe '$input' ist nicht möglich. Versuche es erneut!")
                         return checkInput()

@@ -1,5 +1,3 @@
-import kotlin.system.exitProcess
-
 val kartendeck: List<String> = listOf(
     "Pik Ass", "Pik Koenig", "Pik Dame", "Pik Bube", "Pik 10", "Pik 9",
     "Pik 8", "Pik 7", "Pik 6", "Pik 5", "Pik 4", "Pik 3", "Pik 2",
@@ -16,10 +14,9 @@ var handDealer: MutableList<String> = mutableListOf()
 var meinDeck = kartendeck.toMutableList()
 var moneyHuman: Int = 100
 var humanBet: Int = 0
+var counter: Int = 0
 
 fun main() {
     println("Game: Blackjack\n")
-    println("Kontostand: $moneyHuman€")
-    showCards(meinDeck, handHuman, handDealer)
-    hitOrPut(handHuman)
+    game(moneyHuman)
 }

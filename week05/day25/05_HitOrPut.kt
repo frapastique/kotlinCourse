@@ -26,7 +26,7 @@ fun hitOrPut(hand0: MutableList<String>) {
     }
 
     if (input == "konto") {
-        humanBet(moneyHuman, "0", "money")
+        moneyActions(moneyHuman, "money")
     }
 
     if (input == "stand") {
@@ -44,12 +44,14 @@ fun hitOrPut(hand0: MutableList<String>) {
 
         if (wert == 21) {
             println("\nGratuliere du hast gewonnen.")
-            break
+            moneyActions(moneyHuman, "win")
+            return
         }
 
         if (check) {
             println("\nDu hast mit dem Wert '$wert' verloren!")
-            exitProcess(0)
+            moneyActions(moneyHuman, "loose")
+            return
         } else {
             return hitOrPut(handHuman)
         }
