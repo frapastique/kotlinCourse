@@ -11,12 +11,14 @@ fun dealersTurn(hand1: MutableList<String>, handWert: Int) {
 
     while (true) {
         if (check) {
+            counterWin++
             println("\nDer Dealer verliert mit dem Wert: $wert")
             moneyActions(moneyHuman, "win")
             break
         }
         if (wert == handWert) {
             if (wert > 17) {
+                counterDraw++
                 println("Ein Unentschieden!")
                 moneyActions(moneyHuman, "draw")
                 break
@@ -25,6 +27,7 @@ fun dealersTurn(hand1: MutableList<String>, handWert: Int) {
             }
         }
         if (wert == 21 || (wert >= 17 && wert > handWert && wert < 21)) {
+            counterLoose++
             println("\nDer Dealer gewinnt mit dem Wert: $wert")
             moneyActions(moneyHuman, "loose")
             break

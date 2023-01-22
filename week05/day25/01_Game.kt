@@ -22,7 +22,7 @@ fun game(money: Int) {
                 counter++
                 handHuman.clear()
                 handDealer.clear()
-                println(counter)
+                println("\nRunde $counter")
                 moneyActions(moneyHuman, "set")
                 showCards(meinDeck, handHuman, handDealer)
                 hitOrPut(handHuman)
@@ -30,8 +30,19 @@ fun game(money: Int) {
             } else {
                 println("""
                     
-                    Runden:     '$counter'
-                    Kontostand: '$moneyHuman€'
+                    Statistik:
+                    
+                    Runden:     $counter
+                    Verloren:   $counterLoose
+                    Draw:       $counterDraw
+                    Gewonnen:   $counterWin
+                    
+                    Hits:       $counterHit
+                    Stands:     $counterStand
+                    
+                    Kontostand: $moneyHuman€
+                    Verdient:   $counterWon€
+                    Verloren:   $counterLost€
                     
                     Danke fürs Spielen und bis zum nächsten Mal!""".trimIndent())
                 exitProcess(0)

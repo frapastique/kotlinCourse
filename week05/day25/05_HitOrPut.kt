@@ -30,10 +30,12 @@ fun hitOrPut(hand0: MutableList<String>) {
     }
 
     if (input == "stand") {
+        counterStand++
         return dealersTurn(handDealer, wert)
     }
 
     while (input == "hit") {
+        counterHit++
         hand0.add(karte)
         check = looseTerm(hand0)
         handHuman = hand0
@@ -43,12 +45,14 @@ fun hitOrPut(hand0: MutableList<String>) {
         println("Wert: $wert")
 
         if (wert == 21) {
+            counterWin++
             println("\nGratuliere du hast gewonnen.")
             moneyActions(moneyHuman, "win")
             return
         }
 
         if (check) {
+            counterLoose++
             println("\nDu hast mit dem Wert '$wert' verloren!")
             moneyActions(moneyHuman, "loose")
             return

@@ -15,6 +15,13 @@ var meinDeck = kartendeck.toMutableList()
 var moneyHuman: Int = 100
 var humanBet: Int = 0
 var counter: Int = 0
+var counterWin: Int = 0
+var counterDraw: Int = 0
+var counterLoose: Int = 0
+var counterWon: Int = 0
+var counterLost: Int = 0
+var counterHit: Int = 0
+var counterStand: Int = 0
 
 fun main() {
     println("Game: Blackjack\n")

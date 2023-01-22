@@ -16,11 +16,13 @@ fun moneyActions(money: Int, action: String) {
         }
         if (action == "win") {
             moneyHuman += bet * 2
+            counterWon += bet
             println("Gewinn:      ${bet * 2}€")
             println("Kontostand:  $moneyHuman€")
             return
         }
         if (action == "loose") {
+            counterLost += bet
             println("Verlust:     $bet€")
             println("Kontostand:  $moneyHuman€")
             return
