@@ -1,5 +1,3 @@
-import kotlin.system.exitProcess
-
 fun hitOrPut(hand0: MutableList<String>) {
     println("""
         

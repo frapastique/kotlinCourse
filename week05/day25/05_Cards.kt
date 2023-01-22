@@ -1,5 +1,3 @@
-import kotlin.system.exitProcess
-
 fun showCards(deck: MutableList<String>, hand0: MutableList<String>, hand1: MutableList<String>) {
     mischen(deck)
 
