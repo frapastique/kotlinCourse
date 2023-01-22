@@ -11,7 +11,7 @@ fun game(money: Int) {
                 showCards(meinDeck, handHuman, handDealer)
                 hitOrPut(handHuman)
             }
-            if (counter > 0 && moneyHuman != 0) {
+            if (counter > 0 && moneyHuman != 0 && counterRestock == 0) {
                 println(
                     """
                 
@@ -32,6 +32,16 @@ fun game(money: Int) {
                     game(moneyHuman)
                 }
                 break
+            }
+            if (counterRestock != 0) {
+                counter++
+                handHuman.clear()
+                handDealer.clear()
+                println("\nRunde $counter")
+                moneyActions(moneyHuman, "set")
+                showCards(meinDeck, handHuman, handDealer)
+                hitOrPut(handHuman)
+                game(moneyHuman)
             }
             break
         }
