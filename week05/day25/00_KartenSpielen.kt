@@ -22,6 +22,7 @@ var counterWon: Int = 0
 var counterLost: Int = 0
 var counterHit: Int = 0
 var counterStand: Int = 0
+var counterRestock: Int = 0
 
 fun main() {
     println("Game: Blackjack")
