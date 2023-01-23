@@ -1,3 +1,4 @@
+/*
 fun main(){
 
     var person: person = person
@@ -5,3 +6,4 @@ fun main(){
     person..age = 19
 
 }
+*/
