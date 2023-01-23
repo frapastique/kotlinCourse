@@ -1,27 +1,30 @@
 class Mitarbeiter(id: Int, name: String, position: String, gehalt: Double, artDerBeschaeftigung: String, mutterschaftsUrlaub: Boolean) {
 
-    var id: Int = 0
-    var name: String = ""
-    var position: String = ""
-    var gehalt: Double = 0.00
-    var artDerBeschaeftigung: String = ""
-    var mutterschaftsUrlaub: Boolean = true
+    var id: Int = id
+    var name: String = name
+    var position: String = position
+    var gehalt: Double = gehalt
+    var artDerBeschaeftigung: String = artDerBeschaeftigung
+    var mutterschaftsUrlaub: Boolean = mutterschaftsUrlaub
 
     fun gehaltAusgeben() {
         println("Name:   $name")
         println("Gehalt: $gehalt")
+        println()
     }
 
-    fun befoerdern(neuePosition: String, neuerGehalt: Double) {
-        position = neuePosition
-        gehalt = neuerGehalt
+    fun befoerdern() {
+        println("Mitarbeiter:   $name")
+        println("Position:      $position")
+        println("Gehalt:        $gehalt")
+        println()
     }
 
     fun istVerfuegbar() {
-        if (true) {
-            println("Mitarbeiter:in ist gerade im Mutterschaftsurlaub.")
+        if (mutterschaftsUrlaub) {
+            println("$name ist gerade im Mutterschaftsurlaub.")
         } else {
-            println("Mitarbeiter:in ist Verfügbar.")
+            println("$name ist Verfügbar.")
         }
     }
 }
