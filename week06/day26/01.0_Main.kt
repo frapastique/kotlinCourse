@@ -31,4 +31,6 @@ fun main() {
     // Hier drunter könnten ihr weitercoden:
     secondBus.honk()
     secondBus.durchsage()
+
+    println("Unsere Bus hat ${firstBus.seats} Sitze.")
 }
