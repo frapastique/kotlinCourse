@@ -1,11 +1,7 @@
-/*
-Person {
+class Person {
+    var age = 18
 
-    val age = 18
-
+    fun speak() {
+        println("Hallo!")
+    }
 }
-
-method speak() {
-    println("Hallo!")
-}
- */
