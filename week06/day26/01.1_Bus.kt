@@ -16,5 +16,7 @@ class Bus {
 
     // Wir wollen, dass ein Bus eine Durchsage "Bitte aussteigen" machen kann.
     // Erstelle eine Methode mit dem Namen "durchsage", die eine Durchsage in der Konsole ausgibt.
-
+    fun durchsage() {
+        println("Willkommen im Bus des örtlichen Nahverkehrs.")
+    }
 }

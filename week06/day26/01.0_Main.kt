@@ -12,7 +12,7 @@ fun main() {
     firstBus.honk()
 
     // Auch über die Punktnotation können wir Eigenschaften des Busses verwenden.
-    // Hier geben wir in der Konsole aus, wieviel PS unser Bus hat.
+    // Hier geben wir in der Konsole aus, wie viel PS unser Bus hat.
     val ps = firstBus.horsePower
     println("Ganze $ps PS hat unser Bus.")
 
@@ -29,4 +29,6 @@ fun main() {
 
     // Nachdem euer erstellter Bus einmal gehupt hat, soll über einen Funktionsaufruf die Durchsage getätigt werden.
     // Hier drunter könnten ihr weitercoden:
+    secondBus.honk()
+    secondBus.durchsage()
 }
