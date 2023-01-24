@@ -2,7 +2,7 @@ class Auto(var name: String,var ps: Int, var color: String, var seats: Int, var 
 
     init {
         require(ps >= 1) {"PS kann nicht kleiner als 1 sein!"}
-        require(seats >= 1) {"Es muss mindestens 1 Sitzplatz zur bereitgestellt werden!"}
+        require(seats >= 1) {"Es muss mindestens 1 Sitzplatz bereitgestellt werden!"}
         if (freeSeats > seats) {
             throw IllegalArgumentException("Es können nicht mehr freie Sitzplätze als $seats Sitze bereitgestellt werden.")
         }
