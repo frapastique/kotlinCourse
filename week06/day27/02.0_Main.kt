@@ -1,7 +1,7 @@
 fun main() {
     var birb0: Vogel = Vogel("Amsel", "Beeren", 20)
     var birb1: Vogel = Vogel("Blaumeise", "Samen", 7)
-    var birb2: Vogel = Vogel("Cacatuidae", "Nüsse", 60)
+    var birb2: Vogel = Vogel("Kakadu", "Nüsse", 60)
     var birb3: Vogel = Vogel("Specht", "Ameisen", 10)
     var birb4: Vogel = Vogel("Steinadler", "Hasen", 20)
 
