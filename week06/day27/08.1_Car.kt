@@ -1,14 +1,14 @@
-class Auto {
-    var ps: Int
-    var color: String
-    var seats: Int
-    var freeSeats: Int
+class Auto(var ps: Int, var color: String, var seats: Int, var freeSeats: Int) {
 
-    constructor(ps: Int, color: String, seats: Int, freeseats: Int) {
-        this.ps = ps
-        this.color = color
-        this.seats = seats
-        this.freeSeats = freeseats
+    init {
+        require(ps >= 1) {"PS kann nicht kleiner als 1 sein!"}
+        require(seats >= 1) {"Es muss mindestens 1 Sitzplatz zur bereitgestellt werden!"}
+        if (freeSeats > seats) {
+            throw IllegalArgumentException("Es können nicht mehr freie Sitzplätze als $seats Sitze bereitgestellt werden.")
+        }
+        if (freeSeats < 1) {
+            throw IllegalArgumentException("Es muss mindestens ein Sitzplatz bereitgestellt werden.")
+        }
     }
 
     fun getIn() {
