@@ -11,9 +11,9 @@ class Auto(var ps: Int, var color: String, var seats: Int, var freeSeats: Int) {
         }
     }
 
-    fun getIn() {
+    fun getIn(persons: Int) {
         if (freeSeats > 0) {
-            freeSeats--
+            freeSeats -= persons
             if (freeSeats == 0) {
                 println("Das Auto ist nun mit $seats Peronen voll besetzt.")
             } else {
@@ -24,9 +24,9 @@ class Auto(var ps: Int, var color: String, var seats: Int, var freeSeats: Int) {
         }
     }
 
-    fun getOut() {
+    fun getOut(persons: Int) {
         if (freeSeats < seats) {
-            freeSeats++
+            freeSeats += persons
             if (freeSeats == seats) {
                 println("Das Auto ist leer.")
             } else {
