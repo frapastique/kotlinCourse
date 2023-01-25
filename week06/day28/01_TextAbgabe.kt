@@ -23,8 +23,8 @@ die als Variablen deklariert sind. Außerdem gibt es zwei Methoden
 in der Klasse, "paint" und "tune".
 
 Der Konstruktor der Klasse nimmt zwei Parameter entgegen,
-"color" und "speed", und initialisiert die entsprechenden
-Eigenschaften der Klasse mit diesen Werten.
+"color" als String und "speed" als Integer, und initialisiert die
+entsprechenden Eigenschaften der Klasse mit diesen Werten.
 
 Die Methode "paint" nimmt einen Parameter namens "color" entgegen
 und setzt die Eigenschaft "color" der Klasse auf den übergebenen Wert.
