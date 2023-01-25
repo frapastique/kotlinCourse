@@ -50,6 +50,7 @@ class Auto(var name: String,var ps: Int, var color: String, var seats: Int, var 
             Name:   $name
             PS:     $ps
             Sitze:  $seats
+            Farbe:  $color
             
             """.trimIndent())
     }
