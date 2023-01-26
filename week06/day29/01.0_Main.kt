@@ -1,5 +1,5 @@
 fun main() {
-    val dog: Dog = Dog("Bello", "Golden Retriever")
+    val dog: Hund = Hund("Bello", "Golden Retriever")
 
     dog.bark()
 }

@@ -1,5 +1,5 @@
 fun main() {
-    val cat: Cat = Cat("Mautzi", "Schwarz")
+    val cat: Katze = Katze("Mautzi", "Schwarz")
 
     cat.miau()
 }
