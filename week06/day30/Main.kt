@@ -13,8 +13,5 @@ fun main () {
 
     val streichelzoo = Streichelzoo(mutableListOf(sheep0, sheep1, hen0, hen1, cow0, cow1, pony0, pony1))
 
-    streichelzoo.allAnimalNoises(visitor0)
-    streichelzoo.allAnimalNoises(visitor1)
-    streichelzoo.feedAllAnimals()
 
 }
