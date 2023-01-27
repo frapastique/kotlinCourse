@@ -8,8 +8,8 @@ open class Tier(val name: String, var weight: Double, val age: Int, val gender: 
     fun petting(visitorName: String) {
         println("$visitorName streichelt ${this.name}.")
     }
-    fun feed(visitorName: String) {
+    fun feed(feederName: String) {
         weight = weight.times(1.02)
-        println("$visitorName füttert ${this.name}. Nun wiegt es ${this.weight}.")
+        println("$feederName füttert ${this.name}. Nun wiegt es ${this.weight}.")
     }
 }
