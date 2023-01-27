@@ -11,7 +11,7 @@ class Streichelzoo(var tiere: MutableList<Tier>) {
     }
     fun ponyRace(pony0: Pony, pony1: Pony) {
         val speed0 = pony0.speed
-        val speed1 = pony0.speed
+        val speed1 = pony1.speed
         println("""
             Willkommen zum Pony rennen.
             
