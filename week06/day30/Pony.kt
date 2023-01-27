@@ -2,13 +2,13 @@ class Pony(name: String, weight: Double, age: Int, gender: String, val speed: Do
     override fun animalNoises() {
         println("${this.name}: Wiehiehie")
     }
-    fun riding(visitorName: String, visitorAge: Int) {
+    fun riding(visitor: Besucher) {
         if (this.age >= 1) {
-            if (visitorAge >= 6) {
-                println("$visitorName reitet ${this.name}.")
+            if (visitor.age >= 6) {
+                println("${visitor.name} reitet ${this.name}.")
             } else {
                 println("Das Mindestalter beträgt 6 Jahre.")
-                println("$visitorName ist mit $visitorAge Jahren zu jung um ${this.name} zu reiten.")
+                println("${visitor.name} ist mit ${visitor.age} Jahren zu jung um ${this.name} zu reiten.")
             }
         } else {
             println("Der Pony ${this.name} ist mit ${this.age} zu jung um geritten zu werden.")

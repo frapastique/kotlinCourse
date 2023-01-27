@@ -1,13 +1,12 @@
 class Streichelzoo(var tiere: MutableList<Tier>) {
-    fun allAnimalNoises(visitor: Besucher) {
-        println("Ein Mensch mit dem Namen ${visitor.name} betritt den Streichelzoo.")
+    fun allAnimalNoises() {
         for (i in this.tiere) {
             i.animalNoises()
         }
     }
-    fun feedAllAnimals() {
+    fun feedAllAnimals(feederName: String) {
         for (i in this.tiere) {
-            i.feed("Zoowärter")
+            i.feed(feederName)
         }
     }
     fun ponyRace(pony0: Pony, pony1: Pony) {

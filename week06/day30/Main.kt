@@ -1,6 +1,6 @@
 fun main () {
-    val visitor0 = Besucher("Franz", 35)
-    val visitor1 = Besucher("Sissi", 4)
+    val visitor0 = Besucher("Seb", 15)
+    val visitor1 = Besucher("Boris", 4)
 
     val sheep0 = Schaf("Shawn", 23.4, 5, "weiblich")
     val sheep1 = Schaf("Peter", 30.4, 6, "männlich")
@@ -13,5 +13,28 @@ fun main () {
 
     val streichelzoo = Streichelzoo(mutableListOf(sheep0, sheep1, hen0, hen1, cow0, cow1, pony0, pony1))
 
-
+    visitor0.introduction()
+    visitor1.introduction()
+    println()
+    hen1.animalNoises()
+    println()
+    sheep0.feed(visitor0.name)
+    println()
+    pony1.riding(visitor1)
+    println()
+    hen0.move()
+    println()
+    pony0.petting(visitor0)
+    println()
+    pony0.riding(visitor0)
+    println()
+    pony0.riding(visitor1)
+    println()
+    cow1.milking(visitor0.name)
+    println()
+    streichelzoo.allAnimalNoises()
+    println()
+    streichelzoo.feedAllAnimals(visitor1.name)
+    println()
+    streichelzoo.ponyRace(pony0, pony1)
 }
