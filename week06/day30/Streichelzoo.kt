@@ -5,4 +5,9 @@ class Streichelzoo(var tiere: MutableList<Tier>) {
             i.animalNoises()
         }
     }
+    fun feedAllAnimals() {
+        for (i in this.tiere) {
+            i.feed("Zoowärter")
+        }
+    }
 }
