@@ -9,4 +9,9 @@ fun main () {
     println(animal0.weight)
     println(animal0.age)
     println(animal0.gender)
+
+    animal0.move()
+    animal0.animalNoises()
+    animal0.petting(visitor0.name)
+    animal0.feed(visitor0.name)
 }
