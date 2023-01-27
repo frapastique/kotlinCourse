@@ -1,7 +1,6 @@
 class Pony(name: String, weight: Double, age: Int, gender: String, val speed: Double): Tier(name, weight, age, gender) {
     override fun animalNoises() {
-        super.animalNoises()
-        println("Wiehiehie")
+        println("${this.name}: Wiehiehie")
     }
     fun riding(visitorName: String, visitorAge: Int) {
         if (this.age >= 1) {

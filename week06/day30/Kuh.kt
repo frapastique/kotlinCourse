@@ -1,7 +1,6 @@
 class Kuh(name: String, weight: Double, age: Int, gender: String, val producesMilk: Boolean): Tier(name, weight, age, gender) {
     override fun animalNoises() {
-        super.animalNoises()
-        println("Muuuh")
+        println("${this.name}: Muuuh")
     }
     fun milking(nameVisitor: String) {
         if (producesMilk) {
