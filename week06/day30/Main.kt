@@ -2,6 +2,7 @@ fun main () {
     val visitor0 = Besucher("Franz", 35)
 
     val animal0 = Tier("Helga", 35.3, 12, "weiblich")
+    val sheep0 = Schaf("Shawn", 23.4, 5, "weiblich")
 
     visitor0.introduction()
 
@@ -14,4 +15,6 @@ fun main () {
     animal0.animalNoises()
     animal0.petting(visitor0.name)
     animal0.feed(visitor0.name)
+
+    sheep0.animalNoises()
 }
