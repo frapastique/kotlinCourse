@@ -3,6 +3,7 @@ fun main () {
 
     val animal0 = Tier("Helga", 35.3, 12, "weiblich")
     val sheep0 = Schaf("Shawn", 23.4, 5, "weiblich")
+    val hen0 = Huhn("Kikeri", 2.5, 2, "weiblich", 2)
 
     visitor0.introduction()
 
@@ -17,4 +18,7 @@ fun main () {
     animal0.feed(visitor0.name)
 
     sheep0.animalNoises()
+
+    hen0.animalNoises()
+    println(hen0.egsPerDay)
 }
