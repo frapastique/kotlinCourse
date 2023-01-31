@@ -85,7 +85,7 @@ fun main() {
         }
     }
 
-    /* TODO: Verwende eine Schleife, um alle Schlüssel für einen gegebenen Wert in einer Map zu finden
+    /* Verwende eine Schleife, um alle Schlüssel für einen gegebenen Wert in einer Map zu finden
     * Gesucht werden alle Schlüssel, die auf "Hallo" zeigen.
     * */
     val map = mapOf(
@@ -95,4 +95,10 @@ fun main() {
         62.28 to "Haus",
         16.96 to "Hallo",
     )
+    println("\nVerwende eine Schleife, um alle Schlüssel für den Wert 'Hallo' in einer Map zu finden")
+    for (i in map.entries) {
+        if (i.value == "Hallo") {
+            println(i.key)
+        }
+    }
 }
