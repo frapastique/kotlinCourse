@@ -38,13 +38,18 @@ fun main() {
         println(liste2[i])
     }
 
-    /* TODO: Verwende eine Schleife, um die Anzahl der Elemente einer Liste zu zählen. */
+    /* Verwende eine Schleife, um die Anzahl der Elemente einer Liste zu zählen. */
     val liste3 = listOf(
         "Mein", "kleiner", "grüner", "Kaktus", "Steht", "draußen", "am", "Balkon",
         "Hollari", "hollari", "hollaro", "Was", "brauch'", "ich", "rote", "Rosen?",
         "Was", "brauch'", "ich", "roten", "Mohn?", "Hollari", "hollari", "hollaro",
     )
-
+    println("\nVerwende eine Schleife, um die Anzahl der Elemente einer Liste zu zählen:")
+    var element: Int = 0
+    for (i in liste3.indices) {
+        element += 1
+    }
+    println(element)
 
     /* TODO: Verwende eine Schleife, um die Zahlen in einer Liste zu summieren. */
     val liste4 = listOf(23, 465, 456, 24, 46, 2, 7, 79, 2435, 1, 564, 4, 46, 568, 5, 234, 23, 5)
