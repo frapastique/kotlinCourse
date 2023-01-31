@@ -18,8 +18,11 @@ fun main() {
         println(i)
     }
 
-    /* TODO: Gib jede 7. Zahl von 1 bis 30 mit einer schleife rückwärts aus. */
-
+    /* Gib jede 7. Zahl von 1 bis 30 mit einer schleife rückwärts aus. */
+    println("\nGib jede 7. Zahl von 1 bis 30 mit einer schleife rückwärts aus:")
+    for (i in 30 downTo 1 step 7) {
+        println(i)
+    }
 
     /* TODO: Verwende eine Schleife, um alle Elemente der Liste auszugeben. */
     val liste1 = listOf("Ich ", "bin ", "ein ", "kleiner ", "Kaktus.")
