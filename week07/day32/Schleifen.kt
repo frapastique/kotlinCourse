@@ -1,7 +1,9 @@
 fun main() {
 
-    /* TODO: Gib die Zahlen von 1 bis 30 mit einer schleife aus. */
-
+    /* Gib die Zahlen von 1 bis 30 mit einer schleife aus. */
+    for (i in 1 .. 30) {
+        println(i)
+    }
 
     /* TODO: Gib jede dritte Zahl von 1 bis 30 mit einer schleife aus. */
 
