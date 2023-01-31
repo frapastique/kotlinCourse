@@ -71,14 +71,19 @@ fun main() {
     }
     println(number42)
 
-    /* TODO: Verwende eine Schleife, um die Position (= den Index) eines Elements einer Liste zu finden
+    /* Verwende eine Schleife, um die Position (= den Index) eines Elements einer Liste zu finden
     * Gesucht wird der Index des Strings "Balkon".
     * */
     val liste6 = listOf(
         "Mein", "kleiner", "grüner", "Kaktus", "Steht", "draußen", "am", "Balkon",
         "Hollari", "hollari", "hollaro", "Was", "brauch'", "ich", "rote", "Rosen?",
     )
-
+    println("\nVerwende eine Schleife, um die Position (= den Index) des Elements 'Balkon' einer Liste zu finden:")
+    for (i in liste6) {
+        if (i == "Balkon") {
+            println(liste6.indexOf(i))
+        }
+    }
 
     /* TODO: Verwende eine Schleife, um alle Schlüssel für einen gegebenen Wert in einer Map zu finden
     * Gesucht werden alle Schlüssel, die auf "Hallo" zeigen.
