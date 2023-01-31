@@ -24,9 +24,12 @@ fun main() {
         println(i)
     }
 
-    /* TODO: Verwende eine Schleife, um alle Elemente der Liste auszugeben. */
+    /* Verwende eine Schleife, um alle Elemente der Liste auszugeben. */
     val liste1 = listOf("Ich ", "bin ", "ein ", "kleiner ", "Kaktus.")
-
+    println("\nVerwende eine Schleife, um alle Elemente der Liste auszugeben:")
+    for (i in liste1) {
+        println(i)
+    }
 
     /* TODO: Verwende eine Schleife, um alle Elemente der Liste rückwärts auszugeben. */
     val liste2 = listOf("Kaktus.", "kleiner ", "ein ", "bin ", "Ich ")
