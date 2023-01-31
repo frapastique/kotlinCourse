@@ -5,8 +5,10 @@ fun main() {
         println(i)
     }
 
-    /* TODO: Gib jede dritte Zahl von 1 bis 30 mit einer schleife aus. */
-
+    /* Gib jede dritte Zahl von 1 bis 30 mit einer schleife aus. */
+    for (i in 1 .. 30 step 3) {
+        println(i)
+    }
 
     /* TODO: Gib die Zahlen von 1 bis 30 mit einer schleife rückwärts aus. */
 
