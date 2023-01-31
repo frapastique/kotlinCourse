@@ -51,9 +51,14 @@ fun main() {
     }
     println(element)
 
-    /* TODO: Verwende eine Schleife, um die Zahlen in einer Liste zu summieren. */
+    /* Verwende eine Schleife, um die Zahlen in einer Liste zu summieren. */
     val liste4 = listOf(23, 465, 456, 24, 46, 2, 7, 79, 2435, 1, 564, 4, 46, 568, 5, 234, 23, 5)
-
+    println("\nVerwende eine Schleife, um die Zahlen in einer Liste zu summieren:")
+    var summe: Int = 0
+    for (i in liste4) {
+        summe += i
+    }
+    println(summe)
 
     /* TODO: Verwende eine Schleife, um die Anzahl der Zahl 42 in der Liste zu zählen. */
     val liste5 = listOf(23, 465, 42, 456, 24, 42, 46, 2, 7, 79, 2435, 1, 564, 42, 4, 46, 568, 5, 42, 234, 23, 5)
