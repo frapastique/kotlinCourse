@@ -31,9 +31,12 @@ fun main() {
         println(i)
     }
 
-    /* TODO: Verwende eine Schleife, um alle Elemente der Liste rückwärts auszugeben. */
+    /* Verwende eine Schleife, um alle Elemente der Liste rückwärts auszugeben. */
     val liste2 = listOf("Kaktus.", "kleiner ", "ein ", "bin ", "Ich ")
-
+    println("\nVerwende eine Schleife, um alle Elemente der Liste rückwärts auszugeben:")
+    for (i in liste2.size - 1 downTo 0) {
+        println(liste2[i])
+    }
 
     /* TODO: Verwende eine Schleife, um die Anzahl der Elemente einer Liste zu zählen. */
     val liste3 = listOf(
