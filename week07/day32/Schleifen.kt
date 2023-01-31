@@ -1,17 +1,22 @@
 fun main() {
 
     /* Gib die Zahlen von 1 bis 30 mit einer schleife aus. */
+    println("Gib die Zahlen von 1 bis 30 mit einer schleife aus:")
     for (i in 1 .. 30) {
         println(i)
     }
 
     /* Gib jede dritte Zahl von 1 bis 30 mit einer schleife aus. */
+    println("\nGib jede dritte Zahl von 1 bis 30 mit einer schleife aus:")
     for (i in 1 .. 30 step 3) {
         println(i)
     }
 
-    /* TODO: Gib die Zahlen von 1 bis 30 mit einer schleife rückwärts aus. */
-
+    /* Gib die Zahlen von 1 bis 30 mit einer schleife rückwärts aus. */
+    println("\nGib die Zahlen von 1 bis 30 mit einer schleife rückwärts aus:")
+    for (i in 30 downTo 1) {
+        println(i)
+    }
 
     /* TODO: Gib jede 7. Zahl von 1 bis 30 mit einer schleife rückwärts aus. */
 
