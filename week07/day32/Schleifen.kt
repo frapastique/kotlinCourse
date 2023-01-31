@@ -60,9 +60,16 @@ fun main() {
     }
     println(summe)
 
-    /* TODO: Verwende eine Schleife, um die Anzahl der Zahl 42 in der Liste zu zählen. */
+    /* Verwende eine Schleife, um die Anzahl der Zahl 42 in der Liste zu zählen. */
     val liste5 = listOf(23, 465, 42, 456, 24, 42, 46, 2, 7, 79, 2435, 1, 564, 42, 4, 46, 568, 5, 42, 234, 23, 5)
-
+    println("\nVerwende eine Schleife, um die Anzahl der Zahl 42 in der Liste zu zählen:")
+    var number42: Int = 0
+    for (i in liste5) {
+        if (i == 42) {
+            number42 += 1
+        }
+    }
+    println(number42)
 
     /* TODO: Verwende eine Schleife, um die Position (= den Index) eines Elements einer Liste zu finden
     * Gesucht wird der Index des Strings "Balkon".
